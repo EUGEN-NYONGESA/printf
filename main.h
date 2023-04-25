@@ -1,5 +1,5 @@
-#ifndef HOLBERTONH
-#define HOLBERTONH
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 
 /**
@@ -20,7 +20,7 @@
 typedef struct _specifier
 {
 	int length;
-	unsigned int width;
+	unsigned int width;IN_H
 	unsigned int precision;
 	char flagw;
 	char flagp;
