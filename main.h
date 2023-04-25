@@ -20,7 +20,7 @@
 typedef struct _specifier
 {
 	int length;
-	unsigned int width;IN_H
+	unsigned int width;
 	unsigned int precision;
 	char flagw;
 	char flagp;
@@ -30,14 +30,13 @@ typedef struct _specifier
 	char n;
 	char ln;
 	char specifier;
-} specifier;
+}specifier;
 
 int _printf(char *format, ...);
 char *_str(char *s, specifier spec);
 char *_num(char *str, specifier spec);
 int _strlen(char *s);
 int _puts(char *s);
-int check_puts(char *s)
 char *int_string(va_list arg);
 char *int_to_string(va_list arg);
 char *to_string(va_list arg);
