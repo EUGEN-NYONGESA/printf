@@ -1,0 +1,75 @@
+.TH _PRINTF 3 "April 18 2022 16:06" "0.10" "0x11. C - _printf"
+
+.SH NAME
+.B _printf\fR
+-formatted output conversion
+
+.SH SYNOPSIS
+.B #include <stdio.h> \fB"main.h"
+
+.B int printf(const char 
+*\fIformat\fB, ...);
+
+.SH DESCRIPTION
+The function \fB_printf()\fR prints output to \fIstdout\fR, the standard
+output. The function produces output with the control of a \fIformat\fR string which
+specifies how arguments (subsequent) are converted for output.
+
+.B Return value
+.in +2n
+\fB_printf()\fR returns the number of characters printed for a sucessful return, but excludes the null byte at the end of the strings.
+
+-1 is returned if an output error occurs.
+.in
+
+.B Format 
+The format string is a character string of ordinary characters, that are copied to stdout (unchanged). Conversion specification is introduced by the character \fB%\fR and ends with a \fIconversion specifier\fR. They result in taking in 0 or more arguments.
+
+.B Flag Characters
+The character \fB%\fR can be followed by 0 or the flags. The flags include:
+
+The first character of the output string in \fBo\fR conversions, is prefixed zero. non-zero number are prepended for X and x conversations.
+
+A space is created  by a signed conversion before and empty string or a positive number.
+
+A + or - is put before an integer that a signed conversion produce.
+
+the converted value in \fBu\fR, fBi\fR, fBo\fR, fBX\fR, fBx\fR and fBd\fR conversations, is padded on the left with 0s. Numeric conversation with specified precision \fB0\fR, is ignored.
+
+.B Field Width
+A field width (minimum) can be specified after the flags.
+
+.B Precision
+A precision can be specified by '.'  then a decomal digit string. The precision specifies the minimum number of digits for \fBi\fR, \fBu\fR, \fBd\fR, \fBX\fR and \fBx\fR conversation.
+
+The precision can be as well provided using the '*' character as an argument after the '.' .
+
+.B Conversion Specifiers
+Character specifying the type of cinversion to be applied.
+
+.SH EXAMPLE
+Printing the Nairobi address "00100 Lumumba Drive, Nairobi, NA 60800", 
+insert a new line,
+where \fIstreet\fR, \fIcity\fR, 
+and \fIstate\fR are all pointers pointing to strings
+
+.RS
+#include "main.h"
+
+int main(void)
+
+{
+
+	char *street = "Lumumba Drive";
+
+	char *city = "NAIROBI",
+
+	char *state = "NA";
+
+	printf("%d %s, %s, %s, %d\\n", 00100, street, city, state, 60800);
+
+}
+.RE
+
+.SH AUTHOR
+Eugen Nyongesa, Gearad Kitavi
